@@ -1,9 +1,10 @@
 @import "../styles/index";
 .gridContainer {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(convertPixelToRem(250px), convertPixelToRem(400px)));
+    grid-template-columns: repeat(auto-fit, minmax(convertPixelToRem(250px), 1fr));
     column-gap: convertPixelToRem(30px);
     row-gap: convertPixelToRem(30px);
     padding: convertPixelToRem(30px) 20px;
+    align-items: stretch;
     @include fade-in;
 }

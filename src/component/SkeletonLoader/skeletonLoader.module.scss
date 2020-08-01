@@ -6,6 +6,7 @@
     display: grid;
     grid-auto-flow: row;
     row-gap: convertPixelToRem(10px);
+    background-image: linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.5));
     div {
         background-color: var(--skeleton-loader-element);
     }
@@ -19,20 +20,23 @@
     height: convertPixelToRem(30px);
 }
 .animationHolder {
-    width: convertPixelToRem(10px);
-    background-color: var(--skeleton-animation) !important;
-    animation: slideAcross 0.9s ease-in infinite;
+    width: convertPixelToRem(40px);
+    background-image: linear-gradient(var(--skeleton-animation), rgba(255, 255, 255, 0.3)) !important;
+    animation: slideAcross 0.7s ease-in infinite alternate;
     position: absolute;
     height: 100%;
     bottom: 0;
     left: 0;
+    border-radius: 10px 18px 0px 200px;
 }
 
 @keyframes slideAcross {
     from {
         left: 0;
+        transform: rotate(0deg);
     }
     to {
         left: 95%;
+        transform: rotate(-180deg);
     }
 }

@@ -1,0 +1,22 @@
+@import "../../component/styles/index";
+.main {
+    padding: convertPixelToRem(80px) convertPixelToRem(10px) convertPixelToRem(20px);
+    @include fade-in();
+}
+.gifLink {
+    display: grid;
+    grid-auto-flow: row;
+    row-gap: convertPixelToRem(10px);
+    color: rgba(0, 0, 0, 1);
+    text-decoration: none;
+    box-shadow: var(--theme-gif-box-shadow);
+    padding-bottom: convertPixelToRem(15px);
+    span {
+        padding: convertPixelToRem(10px);
+    }
+    img {
+        width: 100%;
+        height: convertPixelToRem(250px);
+        object-fit: contain;
+    }
+}

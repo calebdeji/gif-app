@@ -1,0 +1,39 @@
+@import "../../component/styles/index";
+.container {
+    width: 100%;
+    height: convertPixelToRem(60px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--theme-preference);
+    box-shadow: var(--theme-box-shadow);
+    padding: convertPixelToRem(10px);
+    position: fixed;
+    width: 98%;
+    top: 0;
+    z-index: 999;
+}
+.title {
+    font-size: convertPixelToRem(20px);
+    margin: 0;
+}
+
+.formSearch {
+    display: grid;
+    align-items: stretch;
+    grid-template-columns: repeat(2, auto);
+    column-gap: convertPixelToRem(10px);
+    height: convertPixelToRem(35px);
+    margin-right: convertPixelToRem(10px);
+
+    input {
+        border: solid 1.5px rgba(0, 0, 0, 0.3);
+        border-radius: convertPixelToRem(5px);
+        padding: 0 convertPixelToRem(10px);
+    }
+    button {
+        background-color: black;
+        border: solid thin rgba(0, 0, 0, 0.3);
+        border-radius: convertPixelToRem(5px);
+    }
+}

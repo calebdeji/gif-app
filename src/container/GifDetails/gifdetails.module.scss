@@ -1,0 +1,45 @@
+@import "../../component/styles/index";
+.main {
+    padding: convertPixelToRem(80px) convertPixelToRem(42px) convertPixelToRem(20px) convertPixelToRem(42px);
+    @include fade-in();
+}
+.gobackIcon {
+    margin: convertPixelToRem(20px) 0;
+    padding: convertPixelToRem(10px);
+    background: transparent;
+    * {
+        fill: black;
+    }
+}
+.details {
+    background-color: var(--gifdetails);
+    padding: convertPixelToRem(20px) convertPixelToRem(10px) convertPixelToRem(30px) convertPixelToRem(30px);
+    display: grid;
+    grid-auto-flow: row;
+    row-gap: convertPixelToRem(10px);
+    border-radius: convertPixelToRem(7px);
+    @include fade-in();
+}
+.gif {
+    width: convertPixelToRem(150px);
+    height: convertPixelToRem(220px);
+    object-fit: contain;
+}
+.detailsSection {
+    display: grid;
+    grid-template-columns: minmax(convertPixelToRem(100px), 15%) auto;
+    width: 100%;
+    column-gap: convertPixelToRem(15px);
+    align-items: center;
+    h3 {
+        font-weight: bold;
+        margin: 0;
+    }
+    p {
+        margin: 0;
+    }
+    a {
+        word-break: break-all;
+        // max-width: 70%;
+    }
+}

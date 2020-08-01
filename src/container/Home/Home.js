@@ -3,11 +3,13 @@ import styles from "./home.module.scss";
 import GifGrid from "../../component/GifGrid/GifGrid";
 import SkeletonLoader from "../../component/SkeletonLoader/SkeletonLoader";
 import { connect } from "react-redux";
-import saveHomeState from "../../redux/action";
+import saveHomeState, { HOME_DATA } from "../../redux/action";
+import useHome from "./useHome";
+import { Link } from "react-router-dom";
 
-const Home = () => {
-    const isFetching = true;
-    const isError = true;
+const Home = ({ homeState, saveHomeState }) => {
+    const { isFetching, isError } = useHome({ homeState, saveHomeState });
+    console.log({ homeState });
     return (
         <main className={styles.main}>
             {isFetching ? (
@@ -20,7 +22,21 @@ const Home = () => {
             ) : isError ? (
                 <p>error</p>
             ) : (
-                <GifGrid></GifGrid>
+                <GifGrid>
+                    {homeState[HOME_DATA].length === 0 ? (
+                        <p>EMpty collections</p>
+                    ) : (
+                        homeState[HOME_DATA].map(({ id, title, images }) => {
+                            const { downsized_large } = images;
+                            return (
+                                <Link to={`/${id}`} key={id} className={styles.gifLink}>
+                                    <img src={downsized_large.url} alt={title} />
+                                    <span>{title}</span>
+                                </Link>
+                            );
+                        })
+                    )}
+                </GifGrid>
             )}
         </main>
     );
