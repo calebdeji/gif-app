@@ -9,7 +9,6 @@ import { Link } from "react-router-dom";
 
 const Home = ({ homeState, saveHomeState }) => {
     const { isFetching, isError } = useHome({ homeState, saveHomeState });
-    console.log({ homeState });
     return (
         <main className={styles.main}>
             {isFetching ? (

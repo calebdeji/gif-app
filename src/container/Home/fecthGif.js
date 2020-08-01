@@ -11,7 +11,6 @@ const fetchGif = async (source, keyword = undefined) => {
         const {
             data: { data },
         } = await Axios.get(url, { cancelToken: source.token });
-        console.log({ data, url });
         return { isError: false, data };
     } catch (error) {
         return destructureErrorObject(error);
