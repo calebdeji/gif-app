@@ -1,0 +1,10 @@
+@import "../../component/styles/index";
+.container {
+    width: 80%;
+    margin: auto;
+    text-align: center;
+    color: #000000;
+    @include responsive(small_tab_above) {
+        width: 50%;
+    }
+}

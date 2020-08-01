@@ -7,25 +7,28 @@ import store from "./redux/store";
 import Home from "./container/Home/Home";
 import GifDetails from "./container/GifDetails/GifDetails";
 import Header from "./container/Header/Header";
+import ErrorBoundary from "./container/ErrorBoundary/ErrorBoundary";
 
 function App() {
     return (
-        <Provider store={store}>
-            <Router>
-                <Header />
-                <Switch>
-                    <Route path="/" exact>
-                        <Home />
-                    </Route>
-                    <Route path="/:id">
-                        <GifDetails />
-                    </Route>
-                    <Route>
-                        <p> No page rendered</p>
-                    </Route>
-                </Switch>
-            </Router>
-        </Provider>
+        <ErrorBoundary>
+            <Provider store={store}>
+                <Router>
+                    <Header />
+                    <Switch>
+                        <Route path="/" exact>
+                            <Home />
+                        </Route>
+                        <Route path="/:id">
+                            <GifDetails />
+                        </Route>
+                        <Route>
+                            <p> No page rendered</p>
+                        </Route>
+                    </Switch>
+                </Router>
+            </Provider>
+        </ErrorBoundary>
     );
 }
 
