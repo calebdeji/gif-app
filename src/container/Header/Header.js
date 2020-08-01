@@ -16,6 +16,7 @@ const Header = (props) => {
                     id="search_gif"
                     value={searchValue}
                     onChange={handleChange}
+                    placeholder="Search for gif..."
                 />
                 <button type="submit">
                     <SearchIcon className={styles.searchIcon} />
